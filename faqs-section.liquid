@@ -2,72 +2,26 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <section class="frequently_section">
   <div class="container page-width">
-    <div class="heading">
-      <h1>Frequently Asked Questions</h1>
-      <p class="title"> Questions You Might Be Wondering About..</p>
+    <div class="heading">{% if section.settings.title != blank %}
+      <h1>{{ section.settings.title | escape }}</h1>{% endif %}{% if section.settings.sub_title != blank %}
+      <p class="title">{{ section.settings.sub_title | escape }}</p>{% endif %}
     </div>
     <div class="accordion_section">
       <ul id="accord1" class="accordian">
+        {% for block in section.blocks %}{% if block.settings.question != blank %}
         <li>
           <header class="ac_header">
             <div class="h_l_c">
               <i class="fas fa-info-circle"></i>
-              <h5>What's the difference between the two ramps?</h5>
+              <h5>{{ block.settings.question }}</h5>
             </div>
             <span class="fas fa-plus-circle"></span>
           </header>
           <section style="display: none;">
-            <p>The difference between the two PawRamps comes down to size; the size of your furniture and the size of the area where you'll use the ramp. <br><br>The PawRamp is 40 inches (100cm) in length and 16 inches (40cm) wide. There are four adjustable heights at:<br>12 inches (30cm)<br>16 inches (40cm)<br>20 inches (50cm)<br>24 inches (60cm)<br>The bearings and support of the PawRamp have been tested to hold weights of up to 77lbs (35kg) and the ramp itself weighs 11lbs<br><br> The PawRamp Lite is 32.5 inches (82cm) in length and 14 inches (35cm) wide. The PawRamp Lite has two adjustable heights at:<br>12 inches (30cm)<br>16 inches (40cm)<br>The bearings and support of the PawRamp Lite have been tested to hold weights of up to to 66lbs (30kg) and the ramp itself weighs 8lbs</p>
+            {{ block.settings.answer }}
           </section>
-        </li>
-        <li>
-          <header class="ac_header">
-            <div class="h_l_c">
-              <i class="fas fa-info-circle"></i>
-              <h5>How do I train my dog to use the ramp?</h5>
-            </div>
-            <span class="fas fa-plus-circle"></span>
-          </header>
-          <section style="">
-            <p>If you’ve trained your dog to do anything, training them to use a ramp shouldn’t be an issue, the trick for most dogs is training with treats, and lots of praise when they use the ramp. Many dogs will take to the ramp immediately and enjoy the freedom of running up and down, but if your dog is hesitant, training and persistence will help them get used to using their new method of transportation to the bed or couch! </p>
-          </section>
-        </li>
-        <li>
-          <header class="ac_header">
-            <div class="h_l_c">
-              <i class="fas fa-info-circle"></i>
-              <h5>What are the shipping costs and times?</h5>
-            </div>
-            <span class="fas fa-plus-circle"></span>
-          </header>
-          <section style="">
-            <p>We ship to the USA, Canada, Australia and Europe.<br><br>Shipping is free for orders over $75 USD in the USA, UK and Australia, for other rates please enter your shipping address at checkout.<br><br>Shipping takes 3-8 business days to arrive unless otherwise stated on the product page. <br><br>  Canada orders may take an additional 7 days to arrive, and may incur additional duty and taxes.<br><br></p>
-          </section>
-        </li>
-        <li>
-          <header class="ac_header">
-            <div class="h_l_c">
-              <i class="fas fa-info-circle"></i>
-              <h5>I want to be featured on your social media accounts, how do I do this?</h5>
-            </div>
-            <span class="fas fa-plus-circle"></span>
-          </header>
-          <section style="">
-            <p>We'd love to have your beautiful pup on our social media! Send us an email to: info@reboundsleep.com</p>
-          </section>
-        </li>
-        <li>
-          <header class="ac_header">
-            <div class="h_l_c">
-              <i class="fas fa-info-circle"></i>
-              <h5>What's your return policy? How do I return something?</h5>
-            </div>
-            <span class="fas fa-plus-circle"></span>
-          </header>
-          <section style="">
-            <p>Returns are no problem with us and we try to keep it simple. We are very sorry the product did not work for you. We proudly offer a 30-day 100% money back guarantee of the purchase price of the item excluding the cost of shipping the item back to us. To return or exchange your item please email Support@pawramp.com for instructions.</p>
-          </section>
-        </li>
+        </li>{% endif %}
+        {% endfor %}
       </ul>
     </div>
   </div>
@@ -76,10 +30,49 @@
 {% schema %}
   {
     "name": "Section Home Faq",
-    "settings": [],
+    "class": "index-section",
+    "max_blocks": 10,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Frequently Asked Questions"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_title",
+        "label": "Sub Heading",
+        "default": "Questions You Might Be Wondering About.."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faqs",
+        "name": "Faqs",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer",
+            "info": "Hidden text"
+          }
+        ]
+      }
+    ],
     "presets": [{
       "name": "Section Home Faq",
-      "category": "Homepage"
+      "category": "Homepage",
+      "blocks": [
+        { "type": "faqs" },
+        { "type": "faqs" },
+        { "type": "faqs" }
+      ]
     }]
   }
 {% endschema %}
