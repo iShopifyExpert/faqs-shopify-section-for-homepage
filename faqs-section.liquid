@@ -1,0 +1,205 @@
+<link href="//cdn.shopify.com/s/files/1/0079/1874/7711/t/10/assets/font-awesome.min.css?v=2186963269736709578" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<section class="frequently_section">
+  <div class="container page-width">
+    <div class="heading">
+      <h1>Frequently Asked Questions</h1>
+      <p class="title"> Questions You Might Be Wondering About..</p>
+    </div>
+    <div class="accordion_section">
+      <ul id="accord1" class="accordian">
+        <li>
+          <header class="ac_header">
+            <div class="h_l_c">
+              <i class="fas fa-info-circle"></i>
+              <h5>What's the difference between the two ramps?</h5>
+            </div>
+            <span class="fas fa-plus-circle"></span>
+          </header>
+          <section style="display: none;">
+            <p>The difference between the two PawRamps comes down to size; the size of your furniture and the size of the area where you'll use the ramp. <br><br>The PawRamp is 40 inches (100cm) in length and 16 inches (40cm) wide. There are four adjustable heights at:<br>12 inches (30cm)<br>16 inches (40cm)<br>20 inches (50cm)<br>24 inches (60cm)<br>The bearings and support of the PawRamp have been tested to hold weights of up to 77lbs (35kg) and the ramp itself weighs 11lbs<br><br> The PawRamp Lite is 32.5 inches (82cm) in length and 14 inches (35cm) wide. The PawRamp Lite has two adjustable heights at:<br>12 inches (30cm)<br>16 inches (40cm)<br>The bearings and support of the PawRamp Lite have been tested to hold weights of up to to 66lbs (30kg) and the ramp itself weighs 8lbs</p>
+          </section>
+        </li>
+        <li>
+          <header class="ac_header">
+            <div class="h_l_c">
+              <i class="fas fa-info-circle"></i>
+              <h5>How do I train my dog to use the ramp?</h5>
+            </div>
+            <span class="fas fa-plus-circle"></span>
+          </header>
+          <section style="">
+            <p>If you’ve trained your dog to do anything, training them to use a ramp shouldn’t be an issue, the trick for most dogs is training with treats, and lots of praise when they use the ramp. Many dogs will take to the ramp immediately and enjoy the freedom of running up and down, but if your dog is hesitant, training and persistence will help them get used to using their new method of transportation to the bed or couch! </p>
+          </section>
+        </li>
+        <li>
+          <header class="ac_header">
+            <div class="h_l_c">
+              <i class="fas fa-info-circle"></i>
+              <h5>What are the shipping costs and times?</h5>
+            </div>
+            <span class="fas fa-plus-circle"></span>
+          </header>
+          <section style="">
+            <p>We ship to the USA, Canada, Australia and Europe.<br><br>Shipping is free for orders over $75 USD in the USA, UK and Australia, for other rates please enter your shipping address at checkout.<br><br>Shipping takes 3-8 business days to arrive unless otherwise stated on the product page. <br><br>  Canada orders may take an additional 7 days to arrive, and may incur additional duty and taxes.<br><br></p>
+          </section>
+        </li>
+        <li>
+          <header class="ac_header">
+            <div class="h_l_c">
+              <i class="fas fa-info-circle"></i>
+              <h5>I want to be featured on your social media accounts, how do I do this?</h5>
+            </div>
+            <span class="fas fa-plus-circle"></span>
+          </header>
+          <section style="">
+            <p>We'd love to have your beautiful pup on our social media! Send us an email to: info@reboundsleep.com</p>
+          </section>
+        </li>
+        <li>
+          <header class="ac_header">
+            <div class="h_l_c">
+              <i class="fas fa-info-circle"></i>
+              <h5>What's your return policy? How do I return something?</h5>
+            </div>
+            <span class="fas fa-plus-circle"></span>
+          </header>
+          <section style="">
+            <p>Returns are no problem with us and we try to keep it simple. We are very sorry the product did not work for you. We proudly offer a 30-day 100% money back guarantee of the purchase price of the item excluding the cost of shipping the item back to us. To return or exchange your item please email Support@pawramp.com for instructions.</p>
+          </section>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Home Faq",
+    "settings": [],
+    "presets": [{
+      "name": "Section Home Faq",
+      "category": "Homepage"
+    }]
+  }
+{% endschema %}
+
+<style>
+.frequently_section {
+  padding: 60px 0;
+  background-color: #0d00ff;/*#36b4ce;*/
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.frequently_section .heading h1, .frequently_section .heading .title {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/** ACCORDIAN **/
+.accordian {
+  list-style:none;
+  margin:0 0px;
+  padding:0;
+  border-top:0;
+}
+
+.ac_header {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin:0;
+  padding:1em 20px;
+  background:#fff;
+  border-bottom: 1px solid #e9e9e9;
+  cursor:pointer;
+}
+.accordian section {
+  display:none;
+  padding:1.5em;
+  font-size: 16px;
+  background:#fff;
+  border-bottom: 3px solid #69c156;
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.09);
+}
+.accordian section.active {
+  display:block;
+}
+
+.ac_header i {
+  padding-right: 10px;
+  display: inline-block;
+  font-size: 20px;
+  color: #747474;
+}
+
+.ac_header span {
+  font-size: 20px;
+  color: #525252;
+}
+
+.ac_header height: 5px; {
+  margin-bottom: 0;
+  display: inline-block;
+  color: #525252;
+}
+
+.h_l_c {
+  display: flex;
+  align-items: center;
+}
+
+.accordian li+li {
+  margin-top: 20px;
+}
+
+.m_blog_link {
+  display: none;
+}
+
+.ac_header h5 {
+  margin-bottom: 0;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$.fn.ashCordian = function() {
+
+  var container = $(this);
+
+  container.find('header').click(function() {
+    if($(this).siblings('section').css('display') == 'block'){
+       container.find('section').slideUp(150);
+    } else {
+      container.find('section').slideUp(150);
+       $(this).siblings('section').slideDown(150);
+    }
+  });
+};
+
+$('#accord1').ashCordian();
+
+$('#accord2').ashCordian();
+
+    var navActive = 'nav_expanded',
+        $pageBody = $("body"),
+        pageOverlay = $(".page_overlay");
+
+$(".nav_action").click(function(){
+      
+        if($pageBody.hasClass(navActive)){
+            $pageBody.removeClass(navActive);
+          	$("#PageContainer").removeAttr("style");
+        } else {
+            $pageBody.addClass(navActive);
+          var get_navbar_height = $(".nabvar").height();
+          $("#PageContainer").css("transform","translate3d(0px, 450px, 0px)");
+        }
+        if($pageBody.hasClass("newa_expanded")){
+            $(".newarrival_view").fadeOut(100);
+        }
+});
+</script>
